@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>One Page Website</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* subtle custom smooth behavior & image object-fit fallback */
+    img {
+      object-fit: cover;
+    }
+    /* smooth transition for any interactive hover (optional elegance) */
+    .adaptive-card {
+      transition: all 0.2s ease;
+    }
+	#contacts a {
+	  text-decoration: none;
+	  border-bottom: 1px solid transparent;
+	  transition: border-color 0.2s;
+	}
+
+	#contacts a:hover {
+	  border-bottom-color: currentColor;
+	}
+  </style>
+  
+</head>
+<body class="bg-gray-100 text-gray-900">
+
+	<nav class="sticky top-0 bg-gray-100 shadow p-4 z-50">
+	  <div class="container mx-auto flex justify-between items-center">	
+		<!-- Hamburger -->
+		<button id="menuBtn" class="md:hidden block focus:outline-none">
+		  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+			<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+		  </svg>
+		</button>
+
+		<!-- Desktop menu -->
+		<ul class="hidden md:flex space-x-6">
+		  <li><a href="#home" class="text-lg font-medium hover:text-blue-200">Обо мне</a></li>
+		  <li><a href="#creds" class="text-lg font-medium hover:text-blue-200">Направления</a></li>
+		  <li><a href="#testimonial" class="text-lg font-medium hover:text-blue-200">Отзывы пациентов</a></li>
+		  <li><a href="#contacts" class="text-lg font-medium hover:text-blue-200">Контакты</a></li>
+		</ul>
+		
+		<div class="block text-sm font-semibold">
+		  +1 (234) 567-8901
+		</div>
+	  </div>
+
+	  <!-- Mobile menu (hidden by default) -->
+	  <ul id="mobileMenu" class="hidden md:hidden flex-col space-y-4 mt-4 pt-4 border-t">
+		<li><a href="#home" class="block text-lg font-medium hover:text-blue-200 py-2">Обо мне</a></li>
+		<li><a href="#creds" class="block text-lg font-medium hover:text-blue-200 py-2">Направления</a></li>
+		<li><a href="#testimonial" class="block text-lg font-medium hover:text-blue-200 py-2">Отзывы пациентов</a></li>
+		<li><a href="#contacts" class="block text-lg font-medium hover:text-blue-200 py-2">Контакты</a></li>      
+	  </ul>
+	</nav>
+
+	<script>
+	  document.getElementById('menuBtn').onclick = () => {
+		const mobileMenu = document.getElementById('mobileMenu');
+		mobileMenu.classList.toggle('hidden');
+	  };
+	</script>
+	
+	<section class="w-full px-12 py-12 md:py-16 lg:py-20 bg-gray-50" id="home">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 lg:gap-12 items-center">
+        
+        <!-- LEFT COLUMN: TEXT CONTENT -->
+        <div class="order-1 md:order-1 space-y-5 md:space-y-6">
+          <!-- heading with responsive font sizes -->
+          <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold tracking-tight text-gray-900 leading-tight">
+            Александров<span class="text-blue-600"> Максим</span> Альбертович
+          </h1>
+          
+          <!-- description text -->
+          <p class="text-base sm:text-lg text-gray-600 leading-relaxed max-w-lg">
+            Я — доктор-хирург, профессионал широкого профиля, Mohs-хирург. 
+			Обладаю навыками, способными сохранить и улучшить качество жизни, 
+			увеличивая её продолжительность и укрепляя здоровье.
+          </p>
+          
+          <!-- decorative list / features (real content) -->
+          
+          <!-- call to action buttons (interactive but not required) -->
+          <div class="flex flex-wrap gap-4 pt-4">
+            <button onclick="location.href='#creds';" class="inline-flex items-center justify-center rounded-lg bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 transition-colors">
+              Узнать больше
+              <svg class="ml-2 -mr-1 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </button>
+            <button onclick="location.href='#testimonial';" class="inline-flex items-center justify-center rounded-lg border border-gray-300 bg-white px-5 py-2.5 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 transition-colors">
+              Отзывы
+            </button>
+          </div>
+        </div>
+        
+        <!-- RIGHT COLUMN: PICTURE (adaptive, responsive image) -->
+        <div class="order-2 md:order-2 w-full overflow-hidden rounded-2xl shadow-xl ring-1 ring-gray-200/50 bg-gray-100">
+          <div class="relative w-full aspect-[4/3] sm:aspect-[4/3] md:aspect-[5/4] lg:aspect-[4/3]">
+            <img 
+              src="photo.jpg" alt="Doctor Photo"
+			  class="absolute inset-0 w-full h-full object-cover transition duration-300 hover:scale-105"
+              loading="eager"
+            >
+          </div>
+          <!-- optional caption with subtle style (for realism) -->
+          <div class="p-3 bg-white/80 backdrop-blur-sm text-center text-xs text-gray-500 border-t border-gray-100 md:block">
+            <span class="inline-flex items-center gap-1">Доказательная медицина + индивидуальный подход = ваше здоровье под контролем</span>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+	
+
+<!-- Doctor Credentials Block -->
+<section class="w-full bg-gray-100 py-16 px-6" id="creds">
+  <div class="max-w-4xl mx-auto text-center">
+    <!-- Titles / Degrees Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-1 gap-8 text-left">
+      <!-- Item -->
+	  <div class="flex items-start gap-3">
+          <div class="flex-shrink-0 mt-1">
+            <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+          </div>
+        <span class="text-gray-700 text-base">Хирургическое лечение и диагностика заболеваний органов грудной клетки: рака легкого, хирургических болезней легких (кисты, гамартомы, секвестрации и др.), образований средостения (кисты перикарда, невриномы, тимомы, злокачественные опухоли и др.)</span>
+      </div>
+	  <!-- Item -->
+	  <div class="flex items-start gap-3">
+          <div class="flex-shrink-0 mt-1">
+            <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+          </div>
+        <span class="text-gray-700 text-base">Хирургическое лечение и диагностика заболеваний плевральной полости (плевры), в том числе хирургическое лечение и диагностика плеврита (в том числе метастатические)</span>
+      </div>
+	  	  <!-- Item -->
+	  <div class="flex items-start gap-3">
+          <div class="flex-shrink-0 mt-1">
+            <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+          </div>
+        <span class="text-gray-700 text-base">Хирургическая диагностика лимфопролиферативных заболеваний (лимфомы, лимфогранулематоз)</span>
+      </div>
+	  	  <!-- Item -->
+	  <div class="flex items-start gap-3">
+          <div class="flex-shrink-0 mt-1">
+            <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+          </div>
+        <span class="text-gray-700 text-base">Хирургическое лечение и диагностика поражения внутригрудных лимфоузлов (ВГЛУ): биопсия, внутригрудная лимфодиссекция по показаниям при онкопатологии</span>
+      </div>
+	  	  <!-- Item -->
+	  <div class="flex items-start gap-3">
+          <div class="flex-shrink-0 mt-1">
+            <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+          </div>
+        <span class="text-gray-700 text-base">Хирургическое лечение и диагностика образований грудной клетки (костей, мышц, нервов, кожного покрова)</span>
+      </div>
+	  	  <!-- Item -->
+	  <div class="flex items-start gap-3">
+          <div class="flex-shrink-0 mt-1">
+            <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+          </div>
+        <span class="text-gray-700 text-base">Биопсия периферических лимфоузлов</span>
+      </div>
+	  	  	  <!-- Item -->
+	  <div class="flex items-start gap-3">
+          <div class="flex-shrink-0 mt-1">
+            <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+          </div>
+        <span class="text-gray-700 text-base">Трепан-биопсия новообразований мягких тканей, в том числе молочной железы</span>
+      </div>
+	  	  	  <!-- Item -->
+	  <div class="flex items-start gap-3">
+          <div class="flex-shrink-0 mt-1">
+            <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+          </div>
+        <span class="text-gray-700 text-base">Хирургическая диагностика очагового поражения легких неясной этиологии (диссеминированное поражение)</span>
+      </div>
+	  	  	  <!-- Item -->
+	  <div class="flex items-start gap-3">
+          <div class="flex-shrink-0 mt-1">
+            <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+          </div>
+        <span class="text-gray-700 text-base">Хирургическое лечение метастазов в легких, грудной стенке</span>
+      </div>
+	  	  	  <!-- Item -->
+	  <div class="flex items-start gap-3">
+          <div class="flex-shrink-0 mt-1">
+            <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+          </div>
+        <span class="text-gray-700 text-base">Клиническая интерпретация данных компьютерной томографии органов грудной клетки</span>
+      </div>
+	  	  	  <!-- Item -->
+	  <div class="flex items-start gap-3">
+          <div class="flex-shrink-0 mt-1">
+            <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+          </div>
+        <span class="text-gray-700 text-base">Хирургическое лечение рецидивирующего течения спонтанного пневмоторакса</span>
+      </div>
+	  	  	  <!-- Item -->
+	  <div class="flex items-start gap-3">
+          <div class="flex-shrink-0 mt-1">
+            <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+          </div>
+        <span class="text-gray-700 text-base">Реабилитация в торакальной онкологии</span>
+      </div>
+    </div>
+  </div>
+ 
+</section>
+
+
+<!-- Alpine.js CDN -->
+<script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
+<!-- Testimonials Section -->
+<section class="w-full bg-gray-50 px-6" id="testimonial">
+  <!-- Main container with padding and max-width, centered -->
+  <div class="max-w-5xl mx-auto px-5 py-16 md:py-24">
+    
+    <!-- Section header: modern & elegant -->
+    <div class="text-center mb-12 md:mb-16">
+      <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mt-4 mb-3 leading-tight">
+        Что говорят пациенты
+      </h2>
+      <div class="w-20 h-1 bg-blue-500 rounded-full mx-auto mt-2"></div>
+      <p class="text-gray-500 max-w-2xl mx-auto mt-4 text-lg">Реальные истории, реальный результат.</p>
+    </div>
+
+    <!-- Testimonial carousel wrapper: relative for absolute positioning -->
+    <div class="relative carousel-container mb-10">
+      <!-- TESTIMONIALS SLIDES (3 short, punchy examples) -->
+      <div id="testimonial-slides" class="relative">
+        
+        <!-- Slide 1 -->
+        <div class="testimonial-card active transition-all duration-300 w-full" data-index="0">
+          <div class="bg-white rounded-2xl shadow-xl p-6 md:p-8 border border-blue-50/80 hover:shadow-2xl transition">
+            <div class="flex items-center gap-1 text-yellow-400 mb-4">
+              ★★★★★
+            </div>
+            <p class="text-gray-700 text-lg leading-relaxed mb-6 italic">
+              “Обратилась к доктору Александрову Максиму Альбертовичу за консультацией с целью диагностики родинок. Специальность и квалификация соответствуют моему запросу. Доктор внимательно выслушал мою проблему и провел тщательный осмотр, дал рекомендации. Некоторые родинки подлежали удалению и дальнейшему обследованию. Перед каждой манипуляцией Максим Альбертович подробно объяснял ее суть и последствия, помогая мне комфортно пройти все нужные для моего здоровья и красоты процедуры. Уже порекомендовала доктора Александрова М. А. своим родным и друзьям.”
+            </p>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="testimonial-card inactive w-full" data-index="1">
+          <div class="bg-white rounded-2xl shadow-xl p-6 md:p-8 border border-blue-50/80 hover:shadow-2xl transition">
+            <div class="flex items-center gap-1 text-yellow-400 mb-4">
+              ★★★★★
+            </div>
+            <p class="text-gray-700 text-lg leading-relaxed mb-6 italic">
+              “Я обратилась по поводу изменений на коже ноги. К Максиму Альбертовичу я обращалась и ранее в 2025 по рекомендации врача-дерматолога из районной поликлиники. Врач осмотрел ногу, посоветовал удалить новообразование. Осмотр был произведен профессионально, с грамотными пояснениями. Объяснил план лечения в доступной форме.”
+            </p>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="testimonial-card inactive w-full" data-index="2">
+          <div class="bg-white rounded-2xl shadow-xl p-6 md:p-8 border border-blue-50/80 hover:shadow-2xl transition">
+            <div class="flex items-center gap-1 text-yellow-400 mb-4">
+              ★★★★★
+            </div>
+            <p class="text-gray-700 text-lg leading-relaxed mb-6 italic">
+              “Выражаю глубокую признательность врачу Максиму Альбертовичу за высококвалифицированную помощь в послеоперационной реабилитации. Особенно хочу отметить: внимательное отношение к динамике моего состояния; готовность ответить на любые вопросы и поддержать морально. Благодаря вашим усилиям реабилитация прошла максимально комфортно и эффективно. Рекомендую Максима Альбертовича как компетентного специалиста с большим сердцем!”
+            </p>
+          </div>
+        </div>
+		
+		<!-- Slide 4 -->
+        <div class="testimonial-card inactive w-full" data-index="2">
+          <div class="bg-white rounded-2xl shadow-xl p-6 md:p-8 border border-blue-50/80 hover:shadow-2xl transition">
+            <div class="flex items-center gap-1 text-yellow-400 mb-4">
+              ★★★★★
+            </div>
+            <p class="text-gray-700 text-lg leading-relaxed mb-6 italic">
+              “Я обратилась к Максиму Альбертовичу по рекомендации. Со своим вопросом обращалась до него к двум другим врачам, и они не дали ответов. Максим Альбертович все очень понятно объяснил, провел процедуру, за которую другие врачи в других клиниках не брались, и я вышла самой счастливой! Грамотно, толково. Очень приятный и внимательный. ”
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONTROL BUTTONS: previous, next + dots indicator -->
+    <div class="flex justify-center items-center gap-5 mt-4">
+      <!-- Previous Button -->
+      <button id="prevBtn" class="group bg-white border border-gray-300 hover:border-blue-400 hover:bg-blue-50 text-gray-700 font-medium rounded-full p-3 shadow-sm transition-all duration-200 focus:ring-2 focus:ring-blue-300">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+        </svg>
+        <span class="sr-only">Previous testimonial</span>
+      </button>
+      
+      <!-- Dots container (pagination) -->
+      <div class="flex space-x-2 mx-2" id="dotsContainer">
+        <!-- dynamic dots injected via js, but we fill initially for structure -->
+      </div>
+
+      <!-- Next Button -->
+      <button id="nextBtn" class="group bg-white border border-gray-300 hover:border-blue-400 hover:bg-blue-50 text-gray-700 font-medium rounded-full p-3 shadow-sm transition-all duration-200 focus:ring-2 focus:ring-blue-300">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+        </svg>
+        <span class="sr-only">Next testimonial</span>
+      </button>
+    </div>
+
+    <!-- subtle extra micro interaction: optional note -->
+    <p class="text-center text-xs text-gray-400 mt-8">⭐ 100% проверенные отзывы</p>
+  </div>
+
+  <script>
+    (function() {
+      // Get slides and relevant elements
+      const slides = document.querySelectorAll('.testimonial-card');
+      const prevButton = document.getElementById('prevBtn');
+      const nextButton = document.getElementById('nextBtn');
+      const dotsContainer = document.getElementById('dotsContainer');
+      
+      let currentIndex = 0;
+      const totalSlides = slides.length;
+      
+      // Helper: update visibility of slides (active/inactive classes)
+      function updateCarousel(index) {
+        // Sanitize index (ensure within bounds)
+        if (index < 0) index = 0;
+        if (index >= totalSlides) index = totalSlides - 1;
+        currentIndex = index;
+        
+        // Loop through slides and set active/inactive classes + accessibility
+        slides.forEach((slide, i) => {
+          if (i === currentIndex) {
+            slide.classList.remove('inactive');
+            slide.classList.add('active');
+            // Also ensure proper positioning for the active one: absolute removed only active is relative flow
+            slide.style.position = 'relative';
+            slide.style.opacity = '1';
+            slide.style.transform = 'translateX(0)';
+            slide.setAttribute('aria-hidden', 'false');
+          } else {
+            slide.classList.remove('active');
+            slide.classList.add('inactive');
+            slide.style.position = 'absolute';
+            slide.style.top = '0';
+            slide.style.left = '0';
+            slide.style.opacity = '0';
+            slide.style.transform = 'translateX(8px)';
+            slide.setAttribute('aria-hidden', 'true');
+          }
+        });
+        
+        // Update dots active state
+        const allDots = document.querySelectorAll('.dot-indicator');
+        if (allDots.length) {
+          allDots.forEach((dot, idx) => {
+            if (idx === currentIndex) {
+              dot.classList.add('bg-blue-600', 'w-8');
+              dot.classList.remove('bg-gray-300', 'w-2');
+              dot.setAttribute('aria-current', 'true');
+            } else {
+              dot.classList.remove('bg-blue-600', 'w-8');
+              dot.classList.add('bg-gray-300', 'w-2');
+              dot.setAttribute('aria-current', 'false');
+            }
+          });
+        }
+        
+        // Optional: set container min-height based on active slide height to avoid layout shift
+        const activeSlide = slides[currentIndex];
+        if (activeSlide) {
+          const container = document.querySelector('.carousel-container');
+          if (container) {
+            // get height of active slide (including margins/paddings)
+            const slideHeight = activeSlide.offsetHeight;
+            container.style.minHeight = `${slideHeight + 20}px`;
+          }
+        }
+      }
+      
+      // Initialize dots and container min height + set up listeners
+      function initDots() {
+        dotsContainer.innerHTML = '';
+        for (let i = 0; i < totalSlides; i++) {
+          const dot = document.createElement('button');
+          dot.setAttribute('type', 'button');
+          dot.setAttribute('aria-label', `Go to testimonial ${i+1}`);
+          dot.classList.add(
+            'dot-indicator', 
+            'h-2', 
+            'rounded-full', 
+            'transition-all', 
+            'duration-200', 
+            'mx-0.5',
+            'focus:outline-none',
+            'focus:ring-2',
+            'focus:ring-blue-300'
+          );
+          // active/inactive style applied later
+          if (i === currentIndex) {
+            dot.classList.add('bg-blue-600', 'w-8');
+          } else {
+            dot.classList.add('bg-gray-300', 'w-2');
+          }
+          // add click event to jump to specific slide
+          dot.addEventListener('click', (e) => {
+            e.preventDefault();
+            currentIndex = i;
+            updateCarousel(currentIndex);
+          });
+          dotsContainer.appendChild(dot);
+        }
+      }
+      
+      // next slide handler
+      function nextSlide() {
+        let newIndex = currentIndex + 1;
+        if (newIndex >= totalSlides) newIndex = 0;   // loop back to first
+        updateCarousel(newIndex);
+      }
+      
+      // previous slide handler
+      function prevSlide() {
+        let newIndex = currentIndex - 1;
+        if (newIndex < 0) newIndex = totalSlides - 1; // loop to last
+        updateCarousel(newIndex);
+      }
+      
+      // fix initial positioning of inactive slides: initially we have first active, others need absolute
+      function fixInitialLayout() {
+        // Set container min-height initially after rendering
+        const activeEl = slides[0];
+        if (activeEl && document.querySelector('.carousel-container')) {
+          const container = document.querySelector('.carousel-container');
+          container.style.minHeight = `${activeEl.offsetHeight + 20}px`;
+        }
+        
+        slides.forEach((slide, idx) => {
+          if (idx !== 0) {
+            slide.classList.add('inactive');
+            slide.classList.remove('active');
+            slide.style.position = 'absolute';
+            slide.style.top = '0';
+            slide.style.left = '0';
+            slide.style.opacity = '0';
+            slide.style.transform = 'translateX(8px)';
+            slide.setAttribute('aria-hidden', 'true');
+          } else {
+            slide.classList.add('active');
+            slide.classList.remove('inactive');
+            slide.style.position = 'relative';
+            slide.style.opacity = '1';
+            slide.setAttribute('aria-hidden', 'false');
+          }
+        });
+      }
+      
+      // attach button events
+      function bindEvents() {
+        if (prevButton) prevButton.addEventListener('click', prevSlide);
+        if (nextButton) nextButton.addEventListener('click', nextSlide);
+        // optional: keyboard accessibility (left/right arrows)
+        window.addEventListener('keydown', (e) => {
+          if (e.key === 'ArrowLeft') {
+            e.preventDefault();
+            prevSlide();
+          } else if (e.key === 'ArrowRight') {
+            e.preventDefault();
+            nextSlide();
+          }
+        });
+      }
+      
+      // handle window resize to adjust min-height dynamically (avoid overflow)
+      function handleResize() {
+        const activeSlide = slides[currentIndex];
+        if (activeSlide) {
+          const container = document.querySelector('.carousel-container');
+          if (container) {
+            container.style.minHeight = `${activeSlide.offsetHeight + 20}px`;
+          }
+        }
+      }
+      
+      // Initial setup
+      initDots();            // creates dot buttons
+      fixInitialLayout();    // sets proper positioning for inactive slides
+      updateCarousel(0);     // sync classes & dots state and min-height
+      bindEvents();          // add click listeners and keyboard
+      window.addEventListener('resize', () => {
+        // debounce simple call
+        setTimeout(handleResize, 100);
+      });
+      
+      // For safety, re-sync min height after fonts or images load
+      window.addEventListener('load', () => {
+        handleResize();
+        // also, if any slides have dynamic content recheck
+        const container = document.querySelector('.carousel-container');
+        if (container && slides[currentIndex]) {
+          container.style.minHeight = `${slides[currentIndex].offsetHeight + 20}px`;
+        }
+      });
+    })();
+  </script>
+</section>
+
+
+<!-- Contact Section -->
+<section class="w-full bg-gray-100 py-20 px-12" id="contacts">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
+
+    <!-- Contact Info -->
+    <div>
+      <h2 class="text-3xl font-bold text-blue-600 mb-6">Контакты</h2>
+      <p class="text-lg text-gray-700 mb-4">
+        
+      </p>
+
+      <ul class="space-y-4 text-gray-700">
+        <li><strong>Телефон:</strong> +1 (234) 567-8901</li>
+        <li><strong>Почта:</strong> contact@drjohndoeclinic.com</li>
+        <li><strong>Адрес:</strong> 123 Health St, Wellness City, USA</li>
+		<li><strong>Страница на сайте клиники: </strong><a href="https://plastic-surgery.ru/about/specialists/dermsurgery/aleksandrov-maksim-albertovich/" style="">plastic-surgery.ru</a></li>
+        <li><strong>Страница на ПроДокторов: </strong><a href="https://prodoctorov.ru/ekaterinburg/vrach/233321-aleksandrov/">prodoctorov.ru</a></li>
+	  </ul>
+    </div>
+
+    <!-- Embedded Google Map -->
+    <div style="position:relative;overflow:hidden;"><a href="https://yandex.com/maps/org/center_for_cosmetology_plastic_surgery_s_v_nudelman/1254292326/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Center for cosmetology & plastic surgery S. V. Nudelman</a><a href="https://yandex.com/maps/54/yekaterinburg/category/medical_center_clinic/184106108/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:14px;">Medical center, clinic in Yekaterinburg</a><a href="https://yandex.com/maps/54/yekaterinburg/category/plastic_surgery/184105808/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:28px;">Plastic surgery in Yekaterinburg</a><iframe src="https://yandex.com/map-widget/v1/?filter=alternate_vertical%3ARequestWindow&ll=60.586095%2C56.840863&mode=search&oid=1254292326&ol=biz&sctx=ZAAAAAgBEAAaKAoSCYY41sVtSk5AEQwBwLFna0xAEhIJuVD51%2FLKrT8Rca5hhsYToT8iBgABAgMEBSgKOABA2JwGSAFqAnJ1nQHNzMw9oAEAqAEAvQEarS7fwgEF5vaL1gSCAnPQptC10L3RgtGAINC60L7RgdC80LXRgtC%2B0LvQvtCz0LjQuCDQuCDQv9C70LDRgdGC0LjRh9C10YHQutC%2B0Lkg0YXQuNGA0YPRgNCz0LjQuCDQuNC8LiDQoS4g0JIuINCd0YPQtNC10LvRjNC80LDQvdCwigIAkgIAmgIMZGVza3RvcC1tYXBz&sll=60.586095%2C56.840863&sspn=0.058189%2C0.033353&text=%D0%A6%D0%B5%D0%BD%D1%82%D1%80%20%D0%BA%D0%BE%D1%81%D0%BC%D0%B5%D1%82%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D0%B8%20%D0%B8%20%D0%BF%D0%BB%D0%B0%D1%81%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B9%20%D1%85%D0%B8%D1%80%D1%83%D1%80%D0%B3%D0%B8%D0%B8%20%D0%B8%D0%BC.%20%D0%A1.%20%D0%92.%20%D0%9D%D1%83%D0%B4%D0%B5%D0%BB%D1%8C%D0%BC%D0%B0%D0%BD%D0%B0&z=13.85" width="560" height="400" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe></div>
+
+  </div>
+</section>
+
+
+
+</body>
+</html>
