@@ -488,16 +488,6 @@
       function bindEvents() {
         if (prevButton) prevButton.addEventListener('click', prevSlide);
         if (nextButton) nextButton.addEventListener('click', nextSlide);
-        // optional: keyboard accessibility (left/right arrows)
-        window.addEventListener('keydown', (e) => {
-          if (e.key === 'ArrowLeft') {
-            e.preventDefault();
-            prevSlide();
-          } else if (e.key === 'ArrowRight') {
-            e.preventDefault();
-            nextSlide();
-          }
-        });
       }
       
       // handle window resize to adjust min-height dynamically (avoid overflow)
