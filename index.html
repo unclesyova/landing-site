@@ -395,16 +395,6 @@
           });
         }
         
-        // Optional: set container min-height based on active slide height to avoid layout shift
-        const activeSlide = slides[currentIndex];
-        if (activeSlide) {
-          const container = document.querySelector('.carousel-container');
-          if (container) {
-            // get height of active slide (including margins/paddings)
-            const slideHeight = activeSlide.offsetHeight;
-            container.style.minHeight = `${slideHeight + 20}px`;
-          }
-        }
       }
       
       // Initialize dots and container min height + set up listeners
