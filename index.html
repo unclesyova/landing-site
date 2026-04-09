@@ -24,6 +24,7 @@
 	  border-bottom-color: currentColor;
 	}
   </style>
+  <link rel="stylesheet" href="gallery.css">
   
 </head>
 <body class="bg-gray-100 text-gray-900">
@@ -102,9 +103,9 @@
         
         <!-- RIGHT COLUMN: PICTURE (adaptive, responsive image) -->
         <div class="order-2 md:order-2 w-full overflow-hidden rounded-2xl shadow-xl ring-1 ring-gray-200/50 bg-gray-100">
-          <div class="relative w-full aspect-[4/3] sm:aspect-[4/3] md:aspect-[5/4] lg:aspect-[4/3]">
+          <div class="relative w-full aspect-[13/14] sm:aspect-[13/14] md:aspect-[13/14] lg:aspect-[13/14]">
             <img 
-              src="photo.jpg" alt="Doctor Photo"
+              src="photo2.jpg" alt="Doctor Photo"
 			  class="absolute inset-0 w-full h-full object-cover transition duration-300 hover:scale-105"
               loading="eager"
             >
@@ -118,7 +119,93 @@
       
     </div>
   </section>
-	
+  
+  <section class="docs-section">
+    <div class="docs-header">
+        <h2>Документы об образовании</h2>
+        <p>Дипломы, сертификаты и свидетельства о повышении квалификации</p>
+    </div>
+
+    <div class="docs-gallery" id="docGallery">
+        <!-- Карточка 1 -->
+        <div class="doc-card" data-full="docs/doc1.jpg" data-caption="Диплом специалиста (врач-терапевт)">
+            <div class="thumbnail">
+                <img src="docs/doc1.jpg" alt="Диплом о высшем медицинском образовании" loading="lazy">
+            </div>
+            <div class="doc-caption">
+                <strong>Диплом ММА им. Сеченова</strong>
+                <span>Лечебное дело, 2012</span>
+            </div>
+        </div>
+
+        <!-- Карточка 2 -->
+        <div class="doc-card" data-full="docs/doc1.jpg" data-caption="Сертификат специалиста «Терапия»">
+            <div class="thumbnail">
+                <img src="docs/doc1.jpg" alt="Сертификат специалиста" loading="lazy">
+            </div>
+            <div class="doc-caption">
+                <strong>Сертификат специалиста</strong>
+                <span>Терапия, 2020</span>
+            </div>
+        </div>
+
+        <!-- Карточка 3 -->
+        <div class="doc-card" data-full="photo.jpg" data-caption="Удостоверение — функциональная диагностика">
+            <div class="thumbnail">
+                <img src="photo.jpg" alt="Повышение квалификации" loading="lazy">
+            </div>
+            <div class="doc-caption">
+                <strong>Профпереподготовка</strong>
+                <span>Функциональная диагностика, 2018</span>
+            </div>
+        </div>
+
+        <!-- Карточка 4 -->
+        <div class="doc-card" data-full="docs/doc1.jpg" data-caption="Сертификат по кардиологии (аккредитация)">
+            <div class="thumbnail">
+                <img src="docs/doc1.jpg" alt="Аккредитация врача" loading="lazy">
+            </div>
+            <div class="doc-caption">
+                <strong>Аккредитация</strong>
+                <span>Кардиология, 2023</span>
+            </div>
+        </div>
+
+        <!-- Карточка 5 -->
+        <div class="doc-card" data-full="docs/doc1.jpg" data-caption="Курс «Эхокардиография»">
+            <div class="thumbnail">
+                <img src="docs/doc1.jpg" alt="Курсы повышения квалификации" loading="lazy">
+            </div>
+            <div class="doc-caption">
+                <strong>Повышение квалификации</strong>
+                <span>Эхокардиография, 2022</span>
+            </div>
+        </div>
+
+        <!-- Карточка 6 -->
+        <div class="doc-card" data-full="docs/doc1.jpg" data-caption="Сертификат «Амбулаторная терапия»">
+            <div class="thumbnail">
+                <img src="docs/doc1.jpg" alt="Современные методы лечения" loading="lazy">
+            </div>
+            <div class="doc-caption">
+                <strong>Сертификат</strong>
+                <span>Амбулаторная терапия, 2024</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="docs-note">
+        <p>Личные данные (серии, номера) скрыты на сканах документов для безопасности. Оригиналы предоставляются при личной встрече.</p>
+    </div>
+</section>
+<div id="lightbox" class="lightbox">
+    <div class="lightbox-content">
+        <div class="close-lightbox" id="closeLightboxBtn">✕</div>
+        <img id="lightboxImg" src="" alt="Полный размер документа">
+        <div id="lightboxCaption" class="lightbox-caption"></div>
+    </div>
+</div>
+
 
 <!-- Doctor Credentials Block -->
 <section class="w-full bg-gray-100 py-16 px-6" id="creds">
@@ -242,12 +329,8 @@
 <!-- Alpine.js CDN -->
 <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
 
-<!-- Testimonials Section -->
-<section class="w-full bg-gray-50 px-6" id="testimonial">
-  <!-- Main container with padding and max-width, centered -->
-  <div class="max-w-5xl mx-auto px-5 py-16 md:py-24">
-    
-    <!-- Section header: modern & elegant -->
+
+  <section class="docs-section"  id="testimonial">
     <div class="text-center mb-12 md:mb-16">
       <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mt-4 mb-3 leading-tight">
         Что говорят пациенты
@@ -256,264 +339,76 @@
       <p class="text-gray-500 max-w-2xl mx-auto mt-4 text-lg">Реальные истории, реальный результат.</p>
     </div>
 
-    <!-- Testimonial carousel wrapper: relative for absolute positioning -->
-    <div class="relative carousel-container mb-10">
-      <!-- TESTIMONIALS SLIDES (3 short, punchy examples) -->
-      <div id="testimonial-slides" class="relative">
-        
-        <!-- Slide 1 -->
-        <div class="testimonial-card active transition-all duration-300 w-full" data-index="0">
-          <div class="bg-white rounded-2xl shadow-xl p-6 md:p-8 border border-blue-50/80 hover:shadow-2xl transition">
-            <div class="flex items-center gap-1 text-yellow-400 mb-4">
-              ★★★★★
+    <div class="docs-gallery" id="testimonials">
+        <!-- Карточка 1 -->
+        <div class="doc-card" data-full="testimonials/testimonial1.jpg" data-caption="Диплом специалиста (врач-терапевт)">
+            <div class="thumbnail-testiminial">
+                <img src="testimonials/testimonial1.jpg" alt="Диплом о высшем медицинском образовании" loading="lazy">
             </div>
-            <p class="text-gray-700 text-lg leading-relaxed mb-6 italic">
-              “Обратилась к доктору Александрову Максиму Альбертовичу за консультацией с целью диагностики родинок. Специальность и квалификация соответствуют моему запросу. Доктор внимательно выслушал мою проблему и провел тщательный осмотр, дал рекомендации. Некоторые родинки подлежали удалению и дальнейшему обследованию. Перед каждой манипуляцией Максим Альбертович подробно объяснял ее суть и последствия, помогая мне комфортно пройти все нужные для моего здоровья и красоты процедуры. Уже порекомендовала доктора Александрова М. А. своим родным и друзьям.”
-            </p>
-          </div>
         </div>
 
-        <!-- Slide 2 -->
-        <div class="testimonial-card inactive w-full" data-index="1">
-          <div class="bg-white rounded-2xl shadow-xl p-6 md:p-8 border border-blue-50/80 hover:shadow-2xl transition">
-            <div class="flex items-center gap-1 text-yellow-400 mb-4">
-              ★★★★★
+        <!-- Карточка 2 -->
+        <div class="doc-card" data-full="testimonials/testimonial2.jpg" data-caption="Сертификат специалиста «Терапия»">
+            <div class="thumbnail-testiminial">
+                <img src="testimonials/testimonial2.jpg" alt="Сертификат специалиста" loading="lazy">
             </div>
-            <p class="text-gray-700 text-lg leading-relaxed mb-6 italic">
-              “Я обратилась по поводу изменений на коже ноги. К Максиму Альбертовичу я обращалась и ранее в 2025 по рекомендации врача-дерматолога из районной поликлиники. Врач осмотрел ногу, посоветовал удалить новообразование. Осмотр был произведен профессионально, с грамотными пояснениями. Объяснил план лечения в доступной форме.”
-            </p>
-          </div>
         </div>
-
-        <!-- Slide 3 -->
-        <div class="testimonial-card inactive w-full" data-index="2">
-          <div class="bg-white rounded-2xl shadow-xl p-6 md:p-8 border border-blue-50/80 hover:shadow-2xl transition">
-            <div class="flex items-center gap-1 text-yellow-400 mb-4">
-              ★★★★★
-            </div>
-            <p class="text-gray-700 text-lg leading-relaxed mb-6 italic">
-              “Выражаю глубокую признательность врачу Максиму Альбертовичу за высококвалифицированную помощь в послеоперационной реабилитации. Особенно хочу отметить: внимательное отношение к динамике моего состояния; готовность ответить на любые вопросы и поддержать морально. Благодаря вашим усилиям реабилитация прошла максимально комфортно и эффективно. Рекомендую Максима Альбертовича как компетентного специалиста с большим сердцем!”
-            </p>
-          </div>
-        </div>
-		
-		<!-- Slide 4 -->
-        <div class="testimonial-card inactive w-full" data-index="2">
-          <div class="bg-white rounded-2xl shadow-xl p-6 md:p-8 border border-blue-50/80 hover:shadow-2xl transition">
-            <div class="flex items-center gap-1 text-yellow-400 mb-4">
-              ★★★★★
-            </div>
-            <p class="text-gray-700 text-lg leading-relaxed mb-6 italic">
-              “Я обратилась к Максиму Альбертовичу по рекомендации. Со своим вопросом обращалась до него к двум другим врачам, и они не дали ответов. Максим Альбертович все очень понятно объяснил, провел процедуру, за которую другие врачи в других клиниках не брались, и я вышла самой счастливой! Грамотно, толково. Очень приятный и внимательный. ”
-            </p>
-          </div>
-        </div>
-      </div>
     </div>
-
-    <!-- CONTROL BUTTONS: previous, next + dots indicator -->
-    <div class="flex justify-center items-center gap-5 mt-4">
-      <!-- Previous Button -->
-      <button id="prevBtn" class="group bg-white border border-gray-300 hover:border-blue-400 hover:bg-blue-50 text-gray-700 font-medium rounded-full p-3 shadow-sm transition-all duration-200 focus:ring-2 focus:ring-blue-300">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
-        </svg>
-        <span class="sr-only">Previous testimonial</span>
-      </button>
-      
-      <!-- Dots container (pagination) -->
-      <div class="flex space-x-2 mx-2" id="dotsContainer">
-        <!-- dynamic dots injected via js, but we fill initially for structure -->
-      </div>
-
-      <!-- Next Button -->
-      <button id="nextBtn" class="group bg-white border border-gray-300 hover:border-blue-400 hover:bg-blue-50 text-gray-700 font-medium rounded-full p-3 shadow-sm transition-all duration-200 focus:ring-2 focus:ring-blue-300">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
-        </svg>
-        <span class="sr-only">Next testimonial</span>
-      </button>
-    </div>
-
-    <!-- subtle extra micro interaction: optional note -->
-    <p class="text-center text-xs text-gray-400 mt-8">⭐ 100% проверенные отзывы</p>
-  </div>
-
-  <script>
-    (function() {
-      // Get slides and relevant elements
-      const slides = document.querySelectorAll('.testimonial-card');
-      const prevButton = document.getElementById('prevBtn');
-      const nextButton = document.getElementById('nextBtn');
-      const dotsContainer = document.getElementById('dotsContainer');
-      
-      let currentIndex = 0;
-      const totalSlides = slides.length;
-      
-      // Helper: update visibility of slides (active/inactive classes)
-      function updateCarousel(index) {
-        // Sanitize index (ensure within bounds)
-        if (index < 0) index = 0;
-        if (index >= totalSlides) index = totalSlides - 1;
-        currentIndex = index;
-        
-        // Loop through slides and set active/inactive classes + accessibility
-        slides.forEach((slide, i) => {
-          if (i === currentIndex) {
-            slide.classList.remove('inactive');
-            slide.classList.add('active');
-            // Also ensure proper positioning for the active one: absolute removed only active is relative flow
-            slide.style.position = 'relative';
-            slide.style.opacity = '1';
-            slide.style.transform = 'translateX(0)';
-            slide.setAttribute('aria-hidden', 'false');
-          } else {
-            slide.classList.remove('active');
-            slide.classList.add('inactive');
-            slide.style.position = 'absolute';
-            slide.style.top = '0';
-            slide.style.left = '0';
-            slide.style.opacity = '0';
-            slide.style.transform = 'translateX(8px)';
-            slide.setAttribute('aria-hidden', 'true');
-          }
-        });
-        
-        // Update dots active state
-        const allDots = document.querySelectorAll('.dot-indicator');
-        if (allDots.length) {
-          allDots.forEach((dot, idx) => {
-            if (idx === currentIndex) {
-              dot.classList.add('bg-blue-600', 'w-8');
-              dot.classList.remove('bg-gray-300', 'w-2');
-              dot.setAttribute('aria-current', 'true');
-            } else {
-              dot.classList.remove('bg-blue-600', 'w-8');
-              dot.classList.add('bg-gray-300', 'w-2');
-              dot.setAttribute('aria-current', 'false');
-            }
-          });
-        }
-        
-      }
-      
-      // Initialize dots and container min height + set up listeners
-      function initDots() {
-        dotsContainer.innerHTML = '';
-        for (let i = 0; i < totalSlides; i++) {
-          const dot = document.createElement('button');
-          dot.setAttribute('type', 'button');
-          dot.setAttribute('aria-label', `Go to testimonial ${i+1}`);
-          dot.classList.add(
-            'dot-indicator', 
-            'h-2', 
-            'rounded-full', 
-            'transition-all', 
-            'duration-200', 
-            'mx-0.5',
-            'focus:outline-none',
-            'focus:ring-2',
-            'focus:ring-blue-300'
-          );
-          // active/inactive style applied later
-          if (i === currentIndex) {
-            dot.classList.add('bg-blue-600', 'w-8');
-          } else {
-            dot.classList.add('bg-gray-300', 'w-2');
-          }
-          // add click event to jump to specific slide
-          dot.addEventListener('click', (e) => {
-            e.preventDefault();
-            currentIndex = i;
-            updateCarousel(currentIndex);
-          });
-          dotsContainer.appendChild(dot);
-        }
-      }
-      
-      // next slide handler
-      function nextSlide() {
-        let newIndex = currentIndex + 1;
-        if (newIndex >= totalSlides) newIndex = 0;   // loop back to first
-        updateCarousel(newIndex);
-      }
-      
-      // previous slide handler
-      function prevSlide() {
-        let newIndex = currentIndex - 1;
-        if (newIndex < 0) newIndex = totalSlides - 1; // loop to last
-        updateCarousel(newIndex);
-      }
-      
-      // fix initial positioning of inactive slides: initially we have first active, others need absolute
-      function fixInitialLayout() {
-        // Set container min-height initially after rendering
-        const activeEl = slides[0];
-        if (activeEl && document.querySelector('.carousel-container')) {
-          const container = document.querySelector('.carousel-container');
-          container.style.minHeight = `${activeEl.offsetHeight + 20}px`;
-        }
-        
-        slides.forEach((slide, idx) => {
-          if (idx !== 0) {
-            slide.classList.add('inactive');
-            slide.classList.remove('active');
-            slide.style.position = 'absolute';
-            slide.style.top = '0';
-            slide.style.left = '0';
-            slide.style.opacity = '0';
-            slide.style.transform = 'translateX(8px)';
-            slide.setAttribute('aria-hidden', 'true');
-          } else {
-            slide.classList.add('active');
-            slide.classList.remove('inactive');
-            slide.style.position = 'relative';
-            slide.style.opacity = '1';
-            slide.setAttribute('aria-hidden', 'false');
-          }
-        });
-      }
-      
-      // attach button events
-      function bindEvents() {
-        if (prevButton) prevButton.addEventListener('click', prevSlide);
-        if (nextButton) nextButton.addEventListener('click', nextSlide);
-      }
-      
-      // handle window resize to adjust min-height dynamically (avoid overflow)
-      function handleResize() {
-        const activeSlide = slides[currentIndex];
-        if (activeSlide) {
-          const container = document.querySelector('.carousel-container');
-          if (container) {
-            container.style.minHeight = `${activeSlide.offsetHeight + 20}px`;
-          }
-        }
-      }
-      
-      // Initial setup
-      initDots();            // creates dot buttons
-      fixInitialLayout();    // sets proper positioning for inactive slides
-      updateCarousel(0);     // sync classes & dots state and min-height
-      bindEvents();          // add click listeners and keyboard
-      window.addEventListener('resize', () => {
-        // debounce simple call
-        setTimeout(handleResize, 100);
-      });
-      
-      // For safety, re-sync min height after fonts or images load
-      window.addEventListener('load', () => {
-        handleResize();
-        // also, if any slides have dynamic content recheck
-        const container = document.querySelector('.carousel-container');
-        if (container && slides[currentIndex]) {
-          container.style.minHeight = `${slides[currentIndex].offsetHeight + 20}px`;
-        }
-      });
-    })();
-  </script>
 </section>
 
+<script>
+    (function() {
+        // ---- ЗАМЕНИТЕ реальные пути к изображениям ----
+        // Пример сопоставления: для каждой карточки мы берем data-full и подставляем реальную картинку.
+        // В данном демо используются плейсхолдеры. В реальном проекте вы укажете пути к сжатым миниатюрам в src,
+        // а в data-full — путь к полноразмерному скану (например, /img/docs/diplom_full.jpg).
+        const cards = document.querySelectorAll('.doc-card');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightboxImg');
+        const lightboxCaption = document.getElementById('lightboxCaption');
+        
+        // Для демонстрации — подменяем плейсхолдеры на разные иллюстрации (имитация документов)
+        // ВАЖНО: в реальном проекте миниатюры (thumbnail img src) и полноразмерные ссылки (data-full) задаются в HTML.
+        // Здесь просто показан рабочий механизм.
+       
+        
+        // Открытие lightbox
+        function openLightbox(imgSrc, captionText) {
+            lightboxImg.src = imgSrc;
+            lightboxCaption.innerText = captionText;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        
+        cards.forEach(card => {
+            card.addEventListener('click', (e) => {
+                const fullImgUrl = card.getAttribute('data-full');
+				console.log("test")
+                const caption = card.getAttribute('data-caption') || "Документ об образовании";
+                if (fullImgUrl) {
+                    openLightbox(fullImgUrl, caption);
+                }
+            });
+        });
+        
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox || e.target === document.getElementById('closeLightboxBtn')) {
+                closeLightbox();
+            }
+        });
+        
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+                closeLightbox();
+            }
+        });
+    })();
+</script>
 
 <!-- Contact Section -->
 <section class="w-full bg-gray-100 py-20 px-12" id="contacts">
