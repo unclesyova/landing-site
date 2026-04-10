@@ -23,13 +23,46 @@
 	#contacts a:hover {
 	  border-bottom-color: currentColor;
 	}
+	
+	        /* ----- ROW: small image + text (side by side, aligned center) ----- */
+        .info-row {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.25rem 1.25rem 0.25rem 1.25rem;   /* top spacing, then bottom minimal */
+        }
+
+        /* small round/square image inside the row */
+        .small-avatar {
+            width: 30px;
+            height: 30px;
+            border-radius: 40%;        /* slightly rounded but friendly, could be 50% for circle */
+            object-fit: cover;
+            background-color: #cfdfed;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+            flex-shrink: 0;
+        }
+
+        /* row text: subtle style, flexible */
+        .row-text {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: #2c3e4f;
+            letter-spacing: -0.2px;
+            line-height: 1.3;
+            background: #f8fafc;
+            padding: 0.25rem 0.75rem;
+            border-radius: 40px;
+        }
+
   </style>
   <link rel="stylesheet" href="gallery.css">
   
 </head>
 <body class="bg-gray-100 text-gray-900">
 
-	<nav class="sticky top-0 bg-gray-100 shadow p-4 z-50">
+	<nav class="sticky top-0 bg-gray-50 shadow p-4 z-50">
 	  <div class="container mx-auto flex justify-between items-center">	
 		<!-- Hamburger -->
 		<button id="menuBtn" class="md:hidden block focus:outline-none">
@@ -41,6 +74,7 @@
 		<!-- Desktop menu -->
 		<ul class="hidden md:flex space-x-6">
 		  <li><a href="#home" class="text-lg font-medium hover:text-blue-200">Обо мне</a></li>
+		  <li><a href="#documents" class="text-lg font-medium hover:text-blue-200">Документы</a></li>
 		  <li><a href="#creds" class="text-lg font-medium hover:text-blue-200">Направления</a></li>
 		  <li><a href="#testimonial" class="text-lg font-medium hover:text-blue-200">Отзывы пациентов</a></li>
 		  <li><a href="#contacts" class="text-lg font-medium hover:text-blue-200">Контакты</a></li>
@@ -67,7 +101,7 @@
 	  };
 	</script>
 	
-	<section class="w-full px-12 py-12 md:py-16 lg:py-20 bg-gray-50" id="home">
+	<section class="w-full px-12 py-12 md:py-16 lg:py-20 bg-gray-100" id="home">
     <div class="max-w-7xl mx-auto">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 lg:gap-12 items-center">
         
@@ -120,7 +154,7 @@
     </div>
   </section>
   
-  <section class="docs-section">
+  <section class="docs-section" id="documents">
     <div class="docs-header">
         <h2>Документы об образовании</h2>
         <p>Дипломы, сертификаты и свидетельства о повышении квалификации</p>
@@ -128,24 +162,24 @@
 
     <div class="docs-gallery" id="docGallery">
         <!-- Карточка 1 -->
-        <div class="doc-card" data-full="docs/doc1.jpg" data-caption="Диплом специалиста (врач-терапевт)">
+        <div class="doc-card" data-full="docs/doc1.jpg" data-caption="Диплом">
             <div class="thumbnail">
                 <img src="docs/doc1.jpg" alt="Диплом о высшем медицинском образовании" loading="lazy">
             </div>
             <div class="doc-caption">
-                <strong>Диплом ММА им. Сеченова</strong>
-                <span>Лечебное дело, 2012</span>
+                <strong>Диплом</strong>
+                <span>Педиатрия, 2011</span>
             </div>
         </div>
 
         <!-- Карточка 2 -->
-        <div class="doc-card" data-full="docs/doc1.jpg" data-caption="Сертификат специалиста «Терапия»">
+        <div class="doc-card" data-full="docs/doc2.jpg" data-caption="Ординатура «торакальная хирургия»">
             <div class="thumbnail">
-                <img src="docs/doc1.jpg" alt="Сертификат специалиста" loading="lazy">
+                <img src="docs/doc2.jpg" alt="Ординатура" loading="lazy">
             </div>
             <div class="doc-caption">
-                <strong>Сертификат специалиста</strong>
-                <span>Терапия, 2020</span>
+                <strong>Ординатура</strong>
+                <span>Торакальная хирургия, 2014</span>
             </div>
         </div>
 
@@ -177,6 +211,15 @@
                 <img src="docs/doc1.jpg" alt="Курсы повышения квалификации" loading="lazy">
             </div>
             <div class="doc-caption">
+				<div class="info-row">
+                <!-- small image element (avatar / icon style) -->
+					<img class="small-avatar" 
+						 src="icons/thoracic.png" 
+						 alt="profile avatar" 
+						 loading="lazy">
+					<!-- text element inside the same row -->
+					<span class="row-text">Ассоциация торакальных хирургов</span>
+				</div>
                 <strong>Повышение квалификации</strong>
                 <span>Эхокардиография, 2022</span>
             </div>
@@ -184,6 +227,27 @@
 
         <!-- Карточка 6 -->
         <div class="doc-card" data-full="docs/doc1.jpg" data-caption="Сертификат «Амбулаторная терапия»">
+			<div class="doc-caption-header">
+				<div class="flex items-center">
+				  
+				  <!-- Left: small image -->
+				  <div class="flex-shrink-0 pr-3">
+					<img 
+					  src="icons/thoracic.png" 
+					  alt="Sample image"
+					  class="w-8 h-8 rounded-full object-cover object-cover"
+					>
+				  </div>
+				  
+				  <!-- Right: text content -->
+				  <div class="flex-1 text-center">
+					<p class="text-gray-800 text-sm leading-relaxed">
+					  Ассоциация торакальных хирургов
+					</p>
+				  </div>
+				  
+				</div>
+            </div>
             <div class="thumbnail">
                 <img src="docs/doc1.jpg" alt="Современные методы лечения" loading="lazy">
             </div>
@@ -200,9 +264,11 @@
 </section>
 <div id="lightbox" class="lightbox">
     <div class="lightbox-content">
-        <div class="close-lightbox" id="closeLightboxBtn">✕</div>
-        <img id="lightboxImg" src="" alt="Полный размер документа">
-        <div id="lightboxCaption" class="lightbox-caption"></div>
+		<div class="lightbox-inner">
+			<div class="close-lightbox" id="closeLightboxBtn">✕</div>
+			<img id="lightboxImg" src="" alt="Полный размер документа">
+			<div id="lightboxCaption" class="lightbox-caption"></div>
+		</div>
     </div>
 </div>
 
@@ -332,7 +398,7 @@
 
   <section class="docs-section"  id="testimonial">
     <div class="text-center mb-12 md:mb-16">
-      <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mt-4 mb-3 leading-tight">
+      <h2 class="testimonials-header">
         Что говорят пациенты
       </h2>
       <div class="w-20 h-1 bg-blue-500 rounded-full mx-auto mt-2"></div>
@@ -341,16 +407,16 @@
 
     <div class="docs-gallery" id="testimonials">
         <!-- Карточка 1 -->
-        <div class="doc-card" data-full="testimonials/testimonial1.jpg" data-caption="Диплом специалиста (врач-терапевт)">
+        <div class="doc-card" data-full="testimonials/testimonial1.jpg" data-caption=" ">
             <div class="thumbnail-testiminial">
-                <img src="testimonials/testimonial1.jpg" alt="Диплом о высшем медицинском образовании" loading="lazy">
+                <img src="testimonials/testimonial1.jpg" alt="Отзыв" loading="lazy">
             </div>
         </div>
 
         <!-- Карточка 2 -->
-        <div class="doc-card" data-full="testimonials/testimonial2.jpg" data-caption="Сертификат специалиста «Терапия»">
+        <div class="doc-card" data-full="testimonials/testimonial2.jpg" data-caption=" ">
             <div class="thumbnail-testiminial">
-                <img src="testimonials/testimonial2.jpg" alt="Сертификат специалиста" loading="lazy">
+                <img src="testimonials/testimonial2.jpg" alt="Отзыв" loading="lazy">
             </div>
         </div>
     </div>
@@ -358,24 +424,19 @@
 
 <script>
     (function() {
-        // ---- ЗАМЕНИТЕ реальные пути к изображениям ----
-        // Пример сопоставления: для каждой карточки мы берем data-full и подставляем реальную картинку.
-        // В данном демо используются плейсхолдеры. В реальном проекте вы укажете пути к сжатым миниатюрам в src,
-        // а в data-full — путь к полноразмерному скану (например, /img/docs/diplom_full.jpg).
         const cards = document.querySelectorAll('.doc-card');
         const lightbox = document.getElementById('lightbox');
         const lightboxImg = document.getElementById('lightboxImg');
         const lightboxCaption = document.getElementById('lightboxCaption');
         
-        // Для демонстрации — подменяем плейсхолдеры на разные иллюстрации (имитация документов)
-        // ВАЖНО: в реальном проекте миниатюры (thumbnail img src) и полноразмерные ссылки (data-full) задаются в HTML.
-        // Здесь просто показан рабочий механизм.
-       
-        
-        // Открытие lightbox
         function openLightbox(imgSrc, captionText) {
             lightboxImg.src = imgSrc;
-            lightboxCaption.innerText = captionText;
+			if (captionText === " ") {
+			    lightboxCaption.style.display = 'none';
+			} else {
+				lightboxCaption.style.display = 'block';
+			    lightboxCaption.innerText = captionText;
+			}
             lightbox.classList.add('active');
             document.body.style.overflow = 'hidden';
         }
@@ -388,8 +449,7 @@
         cards.forEach(card => {
             card.addEventListener('click', (e) => {
                 const fullImgUrl = card.getAttribute('data-full');
-				console.log("test")
-                const caption = card.getAttribute('data-caption') || "Документ об образовании";
+                const caption = card.getAttribute('data-caption') || " ";
                 if (fullImgUrl) {
                     openLightbox(fullImgUrl, caption);
                 }

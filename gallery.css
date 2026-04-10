@@ -16,6 +16,13 @@
             color: #1a2a3a;
             margin: 0 0 8px 0;
         }
+		
+		.testimonials-header {
+            font-size: 32px;
+            font-weight: 600;
+            color: #1a2a3a;
+            margin: 0 0 8px 0;
+        }
 
         .docs-header p {
             font-size: 18px;
@@ -90,6 +97,11 @@
             padding: 12px 12px 14px;
             text-align: center;
         }
+		
+		.doc-caption-header {
+            padding: 6px 6px 7px;
+			color: #5e6f8d;
+        }
 
         .doc-caption strong {
             display: block;
@@ -149,11 +161,18 @@
             max-height: 90%;
             background: #fff;
             border-radius: 20px;
-            overflow: auto;
+            overflow: hidden;
             position: relative;
             padding: 16px;
             box-shadow: 0 20px 35px rgba(0,0,0,0.3);
         }
+		
+		.lightbox-inner {
+			max-height: calc(90vh - 40px);
+			overflow: auto;
+			padding: 16px;
+			border-radius: 20px;
+		}
 
         .lightbox img {
             max-width: 100%;
