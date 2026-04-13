@@ -39,9 +39,11 @@
         .small-avatar {
             width: 30px;
             height: 30px;
-            border-radius: 40%;        /* slightly rounded but friendly, could be 50% for circle */
-            object-fit: cover;
-            background-color: #cfdfed;
+            border-radius: 40%;			/* slightly rounded but friendly, could be 50% for circle */
+            border-color: #2c3e4f;
+			border: 1px solid;
+			object-fit: cover;
+            background-color: #fff;
             box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
             flex-shrink: 0;
 			display: block;
@@ -119,7 +121,17 @@
           </p>
           
           <!-- decorative list / features (real content) -->
-          
+          <ul class="mt-6 space-y-2 text-gray-700">
+            <li class="flex items-center gap-2">
+				<span class="row-text">✓ Член ассоциации торакальных хирургов</span><img class="small-avatar" src="icons/thoracic.png" alt="profile avatar" loading="lazy">
+			</li>
+            <li class="flex items-center gap-2">
+				<span class="row-text">✓ Член Российского общества хирургов</span><img class="small-avatar" src="icons/surgeon.png" alt="profile avatar" loading="lazy">
+			</li>
+            <li class="flex items-center gap-2">
+				<span class="row-text">✓ Член ассоциации онкологов России</span><img class="small-avatar" src="icons/oncology.png" alt="profile avatar" loading="lazy">
+			</li>
+          </ul>
           <!-- call to action buttons (interactive but not required) -->
           <div class="flex flex-wrap gap-4 pt-4">
             <button onclick="location.href='#creds';" class="inline-flex items-center justify-center rounded-lg bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 transition-colors">
@@ -211,13 +223,6 @@
             </div>
             <div class="doc-caption">
                 <strong>Повышение квалификации</strong>
-				<div class="info-row">
-					<img class="small-avatar" 
-						 src="icons/thoracic.png" 
-						 alt="profile avatar" 
-						 loading="lazy">
-					<span class="row-text">Ассоциация торакальных хирургов</span>
-				</div>
                 <span>Эхокардиография, 2022</span>
             </div>
         </div>
@@ -253,9 +258,9 @@
         </div>
     </div>
 
-    <div class="docs-note">
-        <p>Личные данные (серии, номера) скрыты на сканах документов для безопасности. Оригиналы предоставляются при личной встрече.</p>
-    </div>
+    <!-- <div class="docs-note">
+        <p>Оригиналы могут быть предоставлены при личной встрече.</p>
+    </div> -->
 </section>
 <div id="lightbox" class="lightbox">
     <div class="lightbox-content">
