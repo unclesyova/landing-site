@@ -121,7 +121,7 @@
           </p>
           
           <!-- decorative list / features (real content) -->
-          <ul class="mt-6 space-y-2 text-gray-700">
+          <!-- <ul class="mt-6 space-y-2 text-gray-700">
             <li class="flex items-center gap-2">
 				<span class="row-text">✓ Член ассоциации торакальных хирургов</span><img class="small-avatar" src="icons/thoracic.png" alt="profile avatar" loading="lazy">
 			</li>
@@ -131,7 +131,7 @@
             <li class="flex items-center gap-2">
 				<span class="row-text">✓ Член ассоциации онкологов России</span><img class="small-avatar" src="icons/oncology.png" alt="profile avatar" loading="lazy">
 			</li>
-          </ul>
+          </ul> -->
           <!-- call to action buttons (interactive but not required) -->
           <div class="flex flex-wrap gap-4 pt-4">
             <button onclick="location.href='#creds';" class="inline-flex items-center justify-center rounded-lg bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 transition-colors">
@@ -164,6 +164,78 @@
       
     </div>
   </section>
+  <section class="w-full px-12 py-12 md:py-16 lg:py-20 bg-gray-100">
+	<div class="max-w-7xl mx-auto">
+		<div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 lg:gap-12 items-center">
+    
+			<!-- LEFT COLUMN: TEXT CONTENT -->
+			<div class="order-1 md:order-1 space-y-5 md:space-y-6">
+			  <p class="text-lg sm:text-xl md:text-2xl text-gray-600 leading-relaxed max-w-lg">
+				Ассоциативный член Ассоциации торакальных хирургов России
+			  </p>
+			</div>
+    
+			<!-- RIGHT COLUMN: PICTURE (smaller) -->
+			<div class="order-2 md:order-2 flex justify-center">
+			  <div class="w-48 sm:w-56 md:w-64 overflow-hidden rounded-2xl shadow-xl ring-1 ring-gray-200/50 bg-gray-100">
+				<div class="relative aspect-[16/9]">
+				  <img 
+					src="icons/thoracic-big.png" alt="Doctor Photo"
+					class="absolute inset-0 object-cover transition duration-300"
+					loading="eager"
+				  >
+				</div>
+			  </div>
+			</div>
+		    </div>
+		<div class="mb-6"></div>
+		<div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 lg:gap-12 items-center">
+    
+			<!-- LEFT COLUMN: TEXT CONTENT -->
+			<div class="order-1 md:order-1 space-y-5 md:space-y-6">
+			  <p class="text-lg sm:text-xl md:text-2xl text-gray-600 leading-relaxed max-w-lg">
+				Член Российского общества хирургов
+			  </p>
+			</div>
+    
+			<!-- RIGHT COLUMN: PICTURE (smaller) -->
+			<div class="order-2 md:order-2 flex justify-center">
+			  <div class="w-48 sm:w-56 md:w-64 overflow-hidden rounded-2xl shadow-xl ring-1 ring-gray-200/50 bg-white">
+				<div class="relative aspect-[16/9]">
+				  <img 
+					src="icons/surgeon-big.svg" alt="Doctor Photo"
+					class="absolute inset-0 object-cover transition duration-300"
+					loading="eager"
+				  >
+				</div>
+			  </div>
+			</div>
+		    </div>
+		<div class="mb-6"></div>
+		<div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 lg:gap-12 items-center">
+    
+			<!-- LEFT COLUMN: TEXT CONTENT -->
+			<div class="order-1 md:order-1 space-y-5 md:space-y-6">
+			  <p class="text-lg sm:text-xl md:text-2xl text-gray-600 leading-relaxed max-w-lg">
+				Ассоциативный член Ассоциации Онкологов России
+			  </p>
+			</div>
+    
+			<!-- RIGHT COLUMN: PICTURE (smaller) -->
+			<div class="order-2 md:order-2 flex justify-center">
+			  <div class="w-48 sm:w-56 md:w-64 overflow-hidden rounded-2xl shadow-xl ring-1 ring-gray-200/50 bg-gray-100">
+				<div class="relative aspect-[16/9]">
+				  <img 
+					src="icons/oncology-big2.png" alt="Doctor Photo"
+					class="absolute inset-0 object-cover transition duration-300"
+					loading="eager"
+				  >
+				</div>
+			  </div>
+			</div>
+		    </div>
+		</div>
+  </section>
   
   <section class="docs-section" id="documents">
     <div class="docs-header">
@@ -173,87 +245,178 @@
 
     <div class="docs-gallery" id="docGallery">
         <!-- Карточка 1 -->
-        <div class="doc-card" data-full="docs/doc1.jpg" data-caption="Диплом">
+        <div class="doc-card" data-full="docs/docs/doc1.jpg" data-caption="Диплом">
             <div class="thumbnail">
-                <img src="docs/doc1.jpg" alt="Диплом о высшем медицинском образовании" loading="lazy">
+                <img src="docs/previews/doc1.jpg" alt="Диплом о высшем медицинском образовании" loading="lazy">
             </div>
             <div class="doc-caption">
-                <strong>Диплом</strong>
-                <span>Педиатрия, 2011</span>
+                <strong>Уральский государственный медицинский университет</strong>
+                <span>Врач по специальности «педиатрия»</span>
             </div>
         </div>
 
         <!-- Карточка 2 -->
-        <div class="doc-card" data-full="docs/doc2.jpg" data-caption="Ординатура «торакальная хирургия»">
+        <div class="doc-card" data-full="docs/docs/doc2.jpg" data-caption="Ординатура «торакальная хирургия»">
             <div class="thumbnail">
-                <img src="docs/doc2.jpg" alt="Ординатура" loading="lazy">
+                <img src="docs/previews/doc2.jpg" alt="Ординатура" loading="lazy">
             </div>
             <div class="doc-caption">
-                <strong>Ординатура</strong>
-                <span>Торакальная хирургия, 2014</span>
+                <strong>Уральский государственный медицинский университет</strong>
+                <span>«Торакальная хирургия»</span>
             </div>
         </div>
 
         <!-- Карточка 3 -->
-        <div class="doc-card" data-full="photo.jpg" data-caption="Удостоверение — функциональная диагностика">
+        <div class="doc-card" data-full="docs/docs/doc3.jpg" data-caption="«Онкология»">
             <div class="thumbnail">
-                <img src="photo.jpg" alt="Повышение квалификации" loading="lazy">
+                <img src="docs/previews/doc3.jpg" alt="«Онкология»" loading="lazy">
             </div>
             <div class="doc-caption">
-                <strong>Профпереподготовка</strong>
-                <span>Функциональная диагностика, 2018</span>
+                <strong>Уральский государственный медицинский университет</strong>
+                <span>«Онкология»</span>
             </div>
         </div>
 
         <!-- Карточка 4 -->
-        <div class="doc-card" data-full="docs/doc1.jpg" data-caption="Сертификат по кардиологии (аккредитация)">
+        <div class="doc-card" data-full="docs/docs/doc4.jpg" data-caption="«Детская хирургия»">
             <div class="thumbnail">
-                <img src="docs/doc1.jpg" alt="Аккредитация врача" loading="lazy">
+                <img src="docs/previews/doc4.jpg" alt="«Детская хирургия»" loading="lazy">
             </div>
             <div class="doc-caption">
-                <strong>Аккредитация</strong>
-                <span>Кардиология, 2023</span>
+                <strong>АНО ДПО Партнер+</strong>
+                <span>«Детская хирургия»</span>
             </div>
         </div>
 
         <!-- Карточка 5 -->
-        <div class="doc-card" data-full="docs/doc1.jpg" data-caption="Курс «Эхокардиография»">
+        <div class="doc-card" data-full="docs/docs/doc5.jpg" data-caption="«Физическая и реабилитационная медицина»">
             <div class="thumbnail">
-                <img src="docs/doc1.jpg" alt="Курсы повышения квалификации" loading="lazy">
+                <img src="docs/previews/doc5.jpg" alt="«Физическая и реабилитационная медицина»" loading="lazy">
             </div>
             <div class="doc-caption">
-                <strong>Повышение квалификации</strong>
-                <span>Эхокардиография, 2022</span>
+                <strong>Уральский государственный медицинский университет</strong>
+                <span>«Физическая и реабилитационная медицина»</span>
             </div>
         </div>
 
         <!-- Карточка 6 -->
-        <div class="doc-card" data-full="docs/doc1.jpg" data-caption="Сертификат «Амбулаторная терапия»">
-			<!-- <div class="doc-caption-header">
-				<div class="flex items-center">
-				
-				  <div class="flex-shrink-0 pr-3">
-					<img 
-					  src="icons/thoracic.png" 
-					  alt="Sample image"
-					  class="w-8 h-8 rounded-full object-cover object-cover"
-					>
-				  </div>
-				  
-				  <div class="flex-1 text-center">
-					<p class="text-gray-800 text-sm leading-relaxed">
-					  Ассоциация торакальных хирургов
-					</p>
-				  </div>
-				  
-				</div>
-            </div> -->
+        <div class="doc-card" data-full="docs/docs/doc6.jpg" data-caption="«Хирургия»">
             <div class="thumbnail">
-                <img src="docs/doc1.jpg" alt="Современные методы лечения" loading="lazy">
+                <img src="docs/previews/doc6.jpg" alt="«Хирургия»" loading="lazy">
             </div>
             <div class="doc-caption">
-                <strong>Сертификат</strong>
-                <span>Амбулаторная терапия, 2024</span>
+                <strong>Уральская государственная медицинская академия</strong>
+                <span>«Хирургия»</span>
+            </div>
+        </div>
+		
+		<!-- Карточка 7 -->
+        <div class="doc-card" data-full="docs/docs/doc7.jpg" data-caption="«Хирургические методы лечения заболеваний органов грудной клетки»">
+            <div class="thumbnail">
+                <img src="docs/previews/doc7.jpg" alt="«Хирургические методы лечения заболеваний органов грудной клетки»" loading="lazy">
+            </div>
+            <div class="doc-caption">
+                <strong>Национальный медицинский исследовательский центр фтизиопульмонологии и инфекционных заболеваний</strong>
+                <span>«Хирургические методы лечения заболеваний органов грудной клетки»</span>
+            </div>
+        </div>
+		
+		<!-- Карточка 8 -->
+        <div class="doc-card" data-full="docs/docs/doc8.jpg" data-caption="«Онкология»">
+            <div class="thumbnail">
+                <img src="docs/previews/doc8.jpg" alt="«Онкология»" loading="lazy">
+            </div>
+            <div class="doc-caption">
+                <strong>Центр Специализированного Образования «Проф-Ресурс»</strong>
+                <span>«Онкология»</span>
+            </div>
+        </div>
+		
+		<!-- Карточка 9 -->
+        <div class="doc-card" data-full="docs/docs/doc9.jpg" data-caption="«Детская хирургия»">
+            <div class="thumbnail">
+                <img src="docs/previews/doc9.jpg" alt="«Детская хирургия»" loading="lazy">
+            </div>
+            <div class="doc-caption">
+                <strong>АНО ДПО Партнер+</strong>
+                <span>«Детская хирургия»</span>
+            </div>
+        </div>
+		
+		<!-- Карточка 10 -->
+        <div class="doc-card" data-full="docs/docs/doc10.jpg" data-caption="«Хирургия»">
+            <div class="thumbnail">
+                <img src="docs/previews/doc10.jpg" alt="«Хирургия»" loading="lazy">
+            </div>
+            <div class="doc-caption">
+                <strong>Центр Специализированного Образования «Проф-Ресурс»</strong>
+                <span>«Хирургия»</span>
+            </div>
+        </div>
+		
+		<!-- Карточка 11 -->
+        <div class="doc-card" data-full="docs/docs/doc11.jpg" data-caption="«Онкология»">
+            <div class="thumbnail">
+                <img src="docs/previews/doc11.jpg" alt="«Онкология»" loading="lazy">
+            </div>
+            <div class="doc-caption">
+                <strong>Учебно-консультационный центр Медицинский стандарт</strong>
+                <span>«Онкология»</span>
+            </div>
+        </div>
+		
+		<!-- Карточка 12 -->
+        <div class="doc-card" data-full="docs/docs/doc12.jpg" data-caption="«Применение лазеров в эстетической медицине»">
+            <div class="thumbnail">
+                <img src="docs/previews/doc12.jpg" alt="«Применение лазеров в эстетической медицине»" loading="lazy">
+            </div>
+            <div class="doc-caption">
+                <strong>Технотон</strong>
+                <span>«Применение лазеров в эстетической медицине»</span>
+            </div>
+        </div>
+		
+		<!-- Карточка 13 -->
+        <div class="doc-card" data-full="docs/docs/doc13.jpg" data-caption="«Методологические основы мануальной медицины. Диагностика и коррекция функциональных нарушений опорно-двигательного аппарата»">
+            <div class="thumbnail">
+                <img src="docs/previews/doc13.jpg" alt="«Методологические основы мануальной медицины. Диагностика и коррекция функциональных нарушений опорно-двигательного аппарата»" loading="lazy">
+            </div>
+            <div class="doc-caption">
+                <strong>Институт остеопатии</strong>
+                <span>«Методологические основы мануальной медицины. Диагностика и коррекция функциональных нарушений опорно-двигательного аппарата»</span>
+            </div>
+        </div>
+		
+		<!-- Карточка 14 -->
+        <div class="doc-card" data-full="docs/docs/doc14.jpg" data-caption="Хирургия, №7725 033182640">
+            <div class="thumbnail">
+                <img src="docs/docs/doc14.jpg" alt="Хирургия, №7725 033182640" loading="lazy">
+            </div>
+            <div class="doc-caption">
+                <strong>Российская медицинская академия непрерывного профессионального образования</strong>
+                <span>Хирургия, №7725 033182640</span>
+            </div>
+        </div>
+		
+		<!-- Карточка 15 -->
+        <div class="doc-card" data-full="docs/docs/doc15.jpg" data-caption="Онкология, №7725 033185458">
+            <div class="thumbnail">
+                <img src="docs/docs/doc15.jpg" alt="Онкология, №7725 033185458" loading="lazy">
+            </div>
+            <div class="doc-caption">
+                <strong>Российская медицинская академия непрерывного профессионального образования</strong>
+                <span>Онкология, №7725 033185458</span>
+            </div>
+        </div>
+		
+		<!-- Карточка 16 -->
+        <div class="doc-card" data-full="docs/docs/doc16.jpg" data-caption="Торакальная хирургия, №7725 033380543">
+            <div class="thumbnail">
+                <img src="docs/docs/doc16.jpg" alt="Торакальная хирургия, №7725 033380543" loading="lazy">
+            </div>
+            <div class="doc-caption">
+                <strong>Российская медицинская академия непрерывного профессионального образования</strong>
+                <span>Торакальная хирургия, №7725 033380543</span>
             </div>
         </div>
     </div>
