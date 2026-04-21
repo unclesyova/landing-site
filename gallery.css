@@ -2,7 +2,6 @@
         .docs-section {
             margin: 0 auto;
             padding: 40px 100px;
-            background: #f9fafb;
         }
 
         .docs-header {
@@ -44,7 +43,7 @@
         /* Карточка миниатюры */
         .doc-card {
             cursor: pointer;
-            background: #f8fafc;
+            background: #fff;
             border-radius: 16px;
             overflow: hidden;
             transition: all 0.25s ease;
