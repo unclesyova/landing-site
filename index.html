@@ -59,6 +59,32 @@
         }
 
   </style>
+    <style>
+        /* Custom arrow style: pure CSS, no external resources */
+        .arrow-prefix {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 2.75rem;
+            height: 2.75rem;
+            flex-shrink: 0;
+            font-size: 3.25rem;
+            font-weight: 500;
+
+            transition: transform 0.2s ease;
+        }
+        /* subtle hover movement on the row to indicate interactivity */
+        .card-row:hover .arrow-prefix {
+            transform: translateX(3px);
+        }
+        .card-row {
+            transition: all 0.2s ease;
+        }
+        /* ensure consistent rounding */
+        .rounded-card {
+            border-radius: 1rem; /* 16px */
+        }
+    </style>
   <link rel="stylesheet" href="gallery.css">
   
 </head>
@@ -183,8 +209,9 @@
 	<hr class="mt-20 border-t-1 border-gray-300" id="about">
   </section>
     
-    <div class="bg-white overflow-hidden">
-		 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 px-12">
+    <div class="bg-white overflow-hidden px-12">
+				<div class="max-w-7xl mx-auto">
+		 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             
             <!-- Column 1 -->
             <div class="bg-white">
@@ -229,6 +256,8 @@
             </div>
             
         </div>
+		</div>
+		</div>
   
   <section class="w-full px-12 py-12 md:py-16 lg:py-20 bg-white">
 	<div class="max-w-7xl mx-auto">
@@ -602,7 +631,7 @@
     </div>
 </div>
 
-<section class="w-full px-12 pt-12 md:pt-16 lg:pt-20 bg-white" id="home">
+<section class="w-full px-12 pt-12 md:pt-16 lg:pt-20 bg-white" id="creds">
     <div class="max-w-7xl mx-auto">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 lg:gap-12 items-start">
         
@@ -669,131 +698,70 @@
       
     </div>
   </section>
-  
-<!-- Doctor Credentials Block -->
-<section class="w-full bg-gray-100 py-16 px-6" id="creds">
-  <div class="max-w-4xl mx-auto text-center">
-    <!-- Titles / Degrees Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-1 gap-8 text-left">
-      <!-- Item -->
-	  <div class="flex items-start gap-3">
-          <div class="flex-shrink-0 mt-1">
-            <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-            </svg>
-          </div>
-        <span class="text-gray-700 text-base">Хирургическое лечение и диагностика заболеваний органов грудной клетки: рака легкого, хирургических болезней легких (кисты, гамартомы, секвестрации и др.), образований средостения (кисты перикарда, невриномы, тимомы, злокачественные опухоли и др.)</span>
-      </div>
-	  <!-- Item -->
-	  <div class="flex items-start gap-3">
-          <div class="flex-shrink-0 mt-1">
-            <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-            </svg>
-          </div>
-        <span class="text-gray-700 text-base">Хирургическое лечение и диагностика заболеваний плевральной полости (плевры), в том числе хирургическое лечение и диагностика плеврита (в том числе метастатические)</span>
-      </div>
-	  	  <!-- Item -->
-	  <div class="flex items-start gap-3">
-          <div class="flex-shrink-0 mt-1">
-            <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-            </svg>
-          </div>
-        <span class="text-gray-700 text-base">Хирургическая диагностика лимфопролиферативных заболеваний (лимфомы, лимфогранулематоз)</span>
-      </div>
-	  	  <!-- Item -->
-	  <div class="flex items-start gap-3">
-          <div class="flex-shrink-0 mt-1">
-            <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-            </svg>
-          </div>
-        <span class="text-gray-700 text-base">Хирургическое лечение и диагностика поражения внутригрудных лимфоузлов (ВГЛУ): биопсия, внутригрудная лимфодиссекция по показаниям при онкопатологии</span>
-      </div>
-	  	  <!-- Item -->
-	  <div class="flex items-start gap-3">
-          <div class="flex-shrink-0 mt-1">
-            <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-            </svg>
-          </div>
-        <span class="text-gray-700 text-base">Хирургическое лечение и диагностика образований грудной клетки (костей, мышц, нервов, кожного покрова)</span>
-      </div>
-	  	  <!-- Item -->
-	  <div class="flex items-start gap-3">
-          <div class="flex-shrink-0 mt-1">
-            <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-            </svg>
-          </div>
-        <span class="text-gray-700 text-base">Биопсия периферических лимфоузлов</span>
-      </div>
-	  	  	  <!-- Item -->
-	  <div class="flex items-start gap-3">
-          <div class="flex-shrink-0 mt-1">
-            <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-            </svg>
-          </div>
-        <span class="text-gray-700 text-base">Трепан-биопсия новообразований мягких тканей, в том числе молочной железы</span>
-      </div>
-	  	  	  <!-- Item -->
-	  <div class="flex items-start gap-3">
-          <div class="flex-shrink-0 mt-1">
-            <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-            </svg>
-          </div>
-        <span class="text-gray-700 text-base">Хирургическая диагностика очагового поражения легких неясной этиологии (диссеминированное поражение)</span>
-      </div>
-	  	  	  <!-- Item -->
-	  <div class="flex items-start gap-3">
-          <div class="flex-shrink-0 mt-1">
-            <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-            </svg>
-          </div>
-        <span class="text-gray-700 text-base">Хирургическое лечение метастазов в легких, грудной стенке</span>
-      </div>
-	  	  	  <!-- Item -->
-	  <div class="flex items-start gap-3">
-          <div class="flex-shrink-0 mt-1">
-            <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-            </svg>
-          </div>
-        <span class="text-gray-700 text-base">Клиническая интерпретация данных компьютерной томографии органов грудной клетки</span>
-      </div>
-	  	  	  <!-- Item -->
-	  <div class="flex items-start gap-3">
-          <div class="flex-shrink-0 mt-1">
-            <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-            </svg>
-          </div>
-        <span class="text-gray-700 text-base">Хирургическое лечение рецидивирующего течения спонтанного пневмоторакса</span>
-      </div>
-	  	  	  <!-- Item -->
-	  <div class="flex items-start gap-3">
-          <div class="flex-shrink-0 mt-1">
-            <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-            </svg>
-          </div>
-        <span class="text-gray-700 text-base">Реабилитация в торакальной онкологии</span>
-      </div>
+
+   
+<div class="flex bg-white items-center justify-center p-5 md:p-8 font-sans antialiased">
+
+    <!-- Main container: clean white/glass panel -->
+    <div class="max-w-6xl w-full p-6 md:p-8 border border-white/40">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+            
+            <!-- LEFT SIDE: one block of text centered vertically & horizontally -->
+            <div class="flex items-center justify-center p-6 md:p-8">
+                <div class="text-center md:text-left max-w-sm">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 tracking-tight mb-3">Как я могу помочь?</h2>
+                </div>
+            </div>
+
+            <!-- RIGHT SIDE: 4 blocks with rounded border, but arrows are OUTSIDE the border -->
+            <div class="space-y-5">
+                <!-- Block 1: arrow outside (flex row, arrow separate, then border container) -->
+                <div class="flex items-start gap-3 card-row group">
+                    <!-- arrow outside border -->
+                    <div class="arrow-prefix text-blue-600 mt-2">→</div>
+                    <!-- rounded border block containing text only -->
+                    <div class="flex-1 border border-slate-200 rounded-2xl bg-white p-4 shadow-sm hover:border-indigo-300 hover:shadow-md transition-all">
+                        <p class="text-slate-700 text-base font-medium leading-snug">
+                            Fully responsive — adapts seamlessly to mobile, tablet, and desktop.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Block 2 -->
+                <div class="flex items-start gap-3 card-row group">
+                    <div class="arrow-prefix text-blue-600 mt-2">→</div>
+                    <div class="flex-1 border border-slate-200 rounded-2xl bg-white p-4 shadow-sm hover:border-indigo-300 hover:shadow-md transition-all">
+                        <p class="text-slate-700 text-base font-medium leading-snug">
+                            No external icon libraries — pure Tailwind CSS and simple Unicode arrows.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Block 3 -->
+                <div class="flex items-start gap-3 card-row group">
+                    <div class="arrow-prefix text-blue-600 mt-2">→</div>
+                    <div class="flex-1 border border-slate-200 rounded-2xl bg-white p-4 shadow-sm hover:border-indigo-300 hover:shadow-md transition-all">
+                        <p class="text-slate-700 text-base font-medium leading-snug">
+                            Arrows sit cleanly to the left, outside the rounded border for clarity.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Block 4 -->
+                <div class="flex items-start gap-3 card-row group">
+                    <div class="arrow-prefix text-blue-600 mt-2">→</div>
+                    <div class="flex-1 border border-slate-200 rounded-2xl bg-white p-4 shadow-sm hover:border-indigo-300 hover:shadow-md transition-all">
+                        <p class="text-slate-700 text-base font-medium leading-snug">
+                            Lightweight, fast, and modern — perfect for dashboards or feature lists.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
- 
-</section>
-
-
-<!-- Alpine.js CDN -->
-<script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
-
-
-  <section class="docs-section"  id="testimonial">
+</div>
+  
+  <section class="docs-section bg-gray-50"  id="testimonial">
     <div class="text-center mb-12 md:mb-16">
       <h2 class="testimonials-header">
         Что говорят пациенты
@@ -803,17 +771,393 @@
     </div>
 
     <div class="docs-gallery" id="testimonials">
-        <!-- Карточка 1 -->
-        <div class="doc-card" data-full="testimonials/testimonial1.jpg" data-caption=" ">
+        <div class="doc-card" data-full="testimonials/testimonial1.png" data-caption=" ">
             <div class="thumbnail-testimonial">
-                <img src="testimonials/testimonial1.jpg" alt="Отзыв" loading="lazy">
+                <img src="testimonials/testimonial1.png" alt="Отзыв" loading="lazy">
             </div>
         </div>
 
-        <!-- Карточка 2 -->
-        <div class="doc-card" data-full="testimonials/testimonial2.jpg" data-caption=" ">
+<div class="doc-card" data-full="testimonials/testimonial2.png" data-caption=" ">
             <div class="thumbnail-testimonial">
-                <img src="testimonials/testimonial2.jpg" alt="Отзыв" loading="lazy">
+                <img src="testimonials/testimonial2.png" alt="Отзыв" loading="lazy">
+            </div>
+        </div>
+
+<div class="doc-card" data-full="testimonials/testimonial3.png" data-caption=" ">
+            <div class="thumbnail-testimonial">
+                <img src="testimonials/testimonial3.png" alt="Отзыв" loading="lazy">
+            </div>
+        </div>
+
+<div class="doc-card" data-full="testimonials/testimonial4.png" data-caption=" ">
+            <div class="thumbnail-testimonial">
+                <img src="testimonials/testimonial4.png" alt="Отзыв" loading="lazy">
+            </div>
+        </div>
+
+<div class="doc-card" data-full="testimonials/testimonial5.png" data-caption=" ">
+            <div class="thumbnail-testimonial">
+                <img src="testimonials/testimonial5.png" alt="Отзыв" loading="lazy">
+            </div>
+        </div>
+
+<div class="doc-card" data-full="testimonials/testimonial6.png" data-caption=" ">
+            <div class="thumbnail-testimonial">
+                <img src="testimonials/testimonial6.png" alt="Отзыв" loading="lazy">
+            </div>
+        </div>
+
+<div class="doc-card" data-full="testimonials/testimonial7.png" data-caption=" ">
+            <div class="thumbnail-testimonial">
+                <img src="testimonials/testimonial7.png" alt="Отзыв" loading="lazy">
+            </div>
+        </div>
+
+<div class="doc-card" data-full="testimonials/testimonial8.png" data-caption=" ">
+            <div class="thumbnail-testimonial">
+                <img src="testimonials/testimonial8.png" alt="Отзыв" loading="lazy">
+            </div>
+        </div>
+
+<div class="doc-card" data-full="testimonials/testimonial9.png" data-caption=" ">
+            <div class="thumbnail-testimonial">
+                <img src="testimonials/testimonial9.png" alt="Отзыв" loading="lazy">
+            </div>
+        </div>
+
+<div class="doc-card" data-full="testimonials/testimonial10.png" data-caption=" ">
+            <div class="thumbnail-testimonial">
+                <img src="testimonials/testimonial10.png" alt="Отзыв" loading="lazy">
+            </div>
+        </div>
+
+<div class="doc-card" data-full="testimonials/testimonial11.png" data-caption=" ">
+            <div class="thumbnail-testimonial">
+                <img src="testimonials/testimonial11.png" alt="Отзыв" loading="lazy">
+            </div>
+        </div>
+
+<div class="doc-card" data-full="testimonials/testimonial12.png" data-caption=" ">
+            <div class="thumbnail-testimonial">
+                <img src="testimonials/testimonial12.png" alt="Отзыв" loading="lazy">
+            </div>
+        </div>
+
+<div class="doc-card" data-full="testimonials/testimonial13.png" data-caption=" ">
+            <div class="thumbnail-testimonial">
+                <img src="testimonials/testimonial13.png" alt="Отзыв" loading="lazy">
+            </div>
+        </div>
+
+<div class="doc-card" data-full="testimonials/testimonial14.png" data-caption=" ">
+            <div class="thumbnail-testimonial">
+                <img src="testimonials/testimonial14.png" alt="Отзыв" loading="lazy">
+            </div>
+        </div>
+
+<div class="doc-card" data-full="testimonials/testimonial15.png" data-caption=" ">
+            <div class="thumbnail-testimonial">
+                <img src="testimonials/testimonial15.png" alt="Отзыв" loading="lazy">
+            </div>
+        </div>
+
+<div class="doc-card" data-full="testimonials/testimonial16.png" data-caption=" ">
+            <div class="thumbnail-testimonial">
+                <img src="testimonials/testimonial16.png" alt="Отзыв" loading="lazy">
+            </div>
+        </div>
+
+<div class="doc-card" data-full="testimonials/testimonial17.png" data-caption=" ">
+            <div class="thumbnail-testimonial">
+                <img src="testimonials/testimonial17.png" alt="Отзыв" loading="lazy">
+            </div>
+        </div>
+
+<div class="doc-card" data-full="testimonials/testimonial18.png" data-caption=" ">
+            <div class="thumbnail-testimonial">
+                <img src="testimonials/testimonial18.png" alt="Отзыв" loading="lazy">
+            </div>
+        </div>
+
+<div class="doc-card" data-full="testimonials/testimonial19.png" data-caption=" ">
+            <div class="thumbnail-testimonial">
+                <img src="testimonials/testimonial19.png" alt="Отзыв" loading="lazy">
+            </div>
+        </div>
+
+<div class="doc-card" data-full="testimonials/testimonial20.png" data-caption=" ">
+            <div class="thumbnail-testimonial">
+                <img src="testimonials/testimonial20.png" alt="Отзыв" loading="lazy">
+            </div>
+        </div>
+
+<div class="doc-card" data-full="testimonials/testimonial21.png" data-caption=" ">
+            <div class="thumbnail-testimonial">
+                <img src="testimonials/testimonial21.png" alt="Отзыв" loading="lazy">
+            </div>
+        </div>
+
+<div class="doc-card" data-full="testimonials/testimonial22.png" data-caption=" ">
+            <div class="thumbnail-testimonial">
+                <img src="testimonials/testimonial22.png" alt="Отзыв" loading="lazy">
+            </div>
+        </div>
+
+<div class="doc-card" data-full="testimonials/testimonial23.png" data-caption=" ">
+            <div class="thumbnail-testimonial">
+                <img src="testimonials/testimonial23.png" alt="Отзыв" loading="lazy">
+            </div>
+        </div>
+
+<div class="doc-card" data-full="testimonials/testimonial24.png" data-caption=" ">
+            <div class="thumbnail-testimonial">
+                <img src="testimonials/testimonial24.png" alt="Отзыв" loading="lazy">
+            </div>
+        </div>
+
+<div class="doc-card" data-full="testimonials/testimonial25.png" data-caption=" ">
+            <div class="thumbnail-testimonial">
+                <img src="testimonials/testimonial25.png" alt="Отзыв" loading="lazy">
+            </div>
+        </div>
+
+<div class="doc-card" data-full="testimonials/testimonial26.png" data-caption=" ">
+            <div class="thumbnail-testimonial">
+                <img src="testimonials/testimonial26.png" alt="Отзыв" loading="lazy">
+            </div>
+        </div>
+
+<div class="doc-card" data-full="testimonials/testimonial27.png" data-caption=" ">
+            <div class="thumbnail-testimonial">
+                <img src="testimonials/testimonial27.png" alt="Отзыв" loading="lazy">
+            </div>
+        </div>
+
+<div class="doc-card" data-full="testimonials/testimonial28.png" data-caption=" ">
+            <div class="thumbnail-testimonial">
+                <img src="testimonials/testimonial28.png" alt="Отзыв" loading="lazy">
+            </div>
+        </div>
+
+<div class="doc-card" data-full="testimonials/testimonial29.png" data-caption=" ">
+            <div class="thumbnail-testimonial">
+                <img src="testimonials/testimonial29.png" alt="Отзыв" loading="lazy">
+            </div>
+        </div>
+
+<div class="doc-card" data-full="testimonials/testimonial30.png" data-caption=" ">
+            <div class="thumbnail-testimonial">
+                <img src="testimonials/testimonial30.png" alt="Отзыв" loading="lazy">
+            </div>
+        </div>
+
+<div class="doc-card" data-full="testimonials/testimonial31.png" data-caption=" ">
+            <div class="thumbnail-testimonial">
+                <img src="testimonials/testimonial31.png" alt="Отзыв" loading="lazy">
+            </div>
+        </div>
+
+<div class="doc-card" data-full="testimonials/testimonial32.png" data-caption=" ">
+            <div class="thumbnail-testimonial">
+                <img src="testimonials/testimonial32.png" alt="Отзыв" loading="lazy">
+            </div>
+        </div>
+
+<div class="doc-card" data-full="testimonials/testimonial33.png" data-caption=" ">
+            <div class="thumbnail-testimonial">
+                <img src="testimonials/testimonial33.png" alt="Отзыв" loading="lazy">
+            </div>
+        </div>
+
+<div class="doc-card" data-full="testimonials/testimonial34.png" data-caption=" ">
+            <div class="thumbnail-testimonial">
+                <img src="testimonials/testimonial34.png" alt="Отзыв" loading="lazy">
+            </div>
+        </div>
+
+<div class="doc-card" data-full="testimonials/testimonial35.png" data-caption=" ">
+            <div class="thumbnail-testimonial">
+                <img src="testimonials/testimonial35.png" alt="Отзыв" loading="lazy">
+            </div>
+        </div>
+
+<div class="doc-card" data-full="testimonials/testimonial36.png" data-caption=" ">
+            <div class="thumbnail-testimonial">
+                <img src="testimonials/testimonial36.png" alt="Отзыв" loading="lazy">
+            </div>
+        </div>
+
+<div class="doc-card" data-full="testimonials/testimonial37.png" data-caption=" ">
+            <div class="thumbnail-testimonial">
+                <img src="testimonials/testimonial37.png" alt="Отзыв" loading="lazy">
+            </div>
+        </div>
+
+<div class="doc-card" data-full="testimonials/testimonial38.png" data-caption=" ">
+            <div class="thumbnail-testimonial">
+                <img src="testimonials/testimonial38.png" alt="Отзыв" loading="lazy">
+            </div>
+        </div>
+
+<div class="doc-card" data-full="testimonials/testimonial39.png" data-caption=" ">
+            <div class="thumbnail-testimonial">
+                <img src="testimonials/testimonial39.png" alt="Отзыв" loading="lazy">
+            </div>
+        </div>
+
+<div class="doc-card" data-full="testimonials/testimonial40.png" data-caption=" ">
+            <div class="thumbnail-testimonial">
+                <img src="testimonials/testimonial40.png" alt="Отзыв" loading="lazy">
+            </div>
+        </div>
+
+<div class="doc-card" data-full="testimonials/testimonial41.png" data-caption=" ">
+            <div class="thumbnail-testimonial">
+                <img src="testimonials/testimonial41.png" alt="Отзыв" loading="lazy">
+            </div>
+        </div>
+
+<div class="doc-card" data-full="testimonials/testimonial42.png" data-caption=" ">
+            <div class="thumbnail-testimonial">
+                <img src="testimonials/testimonial42.png" alt="Отзыв" loading="lazy">
+            </div>
+        </div>
+
+<div class="doc-card" data-full="testimonials/testimonial43.png" data-caption=" ">
+            <div class="thumbnail-testimonial">
+                <img src="testimonials/testimonial43.png" alt="Отзыв" loading="lazy">
+            </div>
+        </div>
+
+<div class="doc-card" data-full="testimonials/testimonial44.png" data-caption=" ">
+            <div class="thumbnail-testimonial">
+                <img src="testimonials/testimonial44.png" alt="Отзыв" loading="lazy">
+            </div>
+        </div>
+
+<div class="doc-card" data-full="testimonials/testimonial45.png" data-caption=" ">
+            <div class="thumbnail-testimonial">
+                <img src="testimonials/testimonial45.png" alt="Отзыв" loading="lazy">
+            </div>
+        </div>
+
+<div class="doc-card" data-full="testimonials/testimonial46.png" data-caption=" ">
+            <div class="thumbnail-testimonial">
+                <img src="testimonials/testimonial46.png" alt="Отзыв" loading="lazy">
+            </div>
+        </div>
+
+<div class="doc-card" data-full="testimonials/testimonial47.png" data-caption=" ">
+            <div class="thumbnail-testimonial">
+                <img src="testimonials/testimonial47.png" alt="Отзыв" loading="lazy">
+            </div>
+        </div>
+
+<div class="doc-card" data-full="testimonials/testimonial48.png" data-caption=" ">
+            <div class="thumbnail-testimonial">
+                <img src="testimonials/testimonial48.png" alt="Отзыв" loading="lazy">
+            </div>
+        </div>
+
+<div class="doc-card" data-full="testimonials/testimonial49.png" data-caption=" ">
+            <div class="thumbnail-testimonial">
+                <img src="testimonials/testimonial49.png" alt="Отзыв" loading="lazy">
+            </div>
+        </div>
+
+<div class="doc-card" data-full="testimonials/testimonial50.png" data-caption=" ">
+            <div class="thumbnail-testimonial">
+                <img src="testimonials/testimonial50.png" alt="Отзыв" loading="lazy">
+            </div>
+        </div>
+
+<div class="doc-card" data-full="testimonials/testimonial51.png" data-caption=" ">
+            <div class="thumbnail-testimonial">
+                <img src="testimonials/testimonial51.png" alt="Отзыв" loading="lazy">
+            </div>
+        </div>
+
+<div class="doc-card" data-full="testimonials/testimonial52.png" data-caption=" ">
+            <div class="thumbnail-testimonial">
+                <img src="testimonials/testimonial52.png" alt="Отзыв" loading="lazy">
+            </div>
+        </div>
+
+<div class="doc-card" data-full="testimonials/testimonial53.png" data-caption=" ">
+            <div class="thumbnail-testimonial">
+                <img src="testimonials/testimonial53.png" alt="Отзыв" loading="lazy">
+            </div>
+        </div>
+
+<div class="doc-card" data-full="testimonials/testimonial54.png" data-caption=" ">
+            <div class="thumbnail-testimonial">
+                <img src="testimonials/testimonial54.png" alt="Отзыв" loading="lazy">
+            </div>
+        </div>
+
+<div class="doc-card" data-full="testimonials/testimonial55.png" data-caption=" ">
+            <div class="thumbnail-testimonial">
+                <img src="testimonials/testimonial55.png" alt="Отзыв" loading="lazy">
+            </div>
+        </div>
+
+<div class="doc-card" data-full="testimonials/testimonial56.png" data-caption=" ">
+            <div class="thumbnail-testimonial">
+                <img src="testimonials/testimonial56.png" alt="Отзыв" loading="lazy">
+            </div>
+        </div>
+
+<div class="doc-card" data-full="testimonials/testimonial57.png" data-caption=" ">
+            <div class="thumbnail-testimonial">
+                <img src="testimonials/testimonial57.png" alt="Отзыв" loading="lazy">
+            </div>
+        </div>
+
+<div class="doc-card" data-full="testimonials/testimonial58.png" data-caption=" ">
+            <div class="thumbnail-testimonial">
+                <img src="testimonials/testimonial58.png" alt="Отзыв" loading="lazy">
+            </div>
+        </div>
+
+<div class="doc-card" data-full="testimonials/testimonial59.png" data-caption=" ">
+            <div class="thumbnail-testimonial">
+                <img src="testimonials/testimonial59.png" alt="Отзыв" loading="lazy">
+            </div>
+        </div>
+
+<div class="doc-card" data-full="testimonials/testimonial60.png" data-caption=" ">
+            <div class="thumbnail-testimonial">
+                <img src="testimonials/testimonial60.png" alt="Отзыв" loading="lazy">
+            </div>
+        </div>
+
+<div class="doc-card" data-full="testimonials/testimonial61.png" data-caption=" ">
+            <div class="thumbnail-testimonial">
+                <img src="testimonials/testimonial61.png" alt="Отзыв" loading="lazy">
+            </div>
+        </div>
+
+<div class="doc-card" data-full="testimonials/testimonial62.png" data-caption=" ">
+            <div class="thumbnail-testimonial">
+                <img src="testimonials/testimonial62.png" alt="Отзыв" loading="lazy">
+            </div>
+        </div>
+
+<div class="doc-card" data-full="testimonials/testimonial63.png" data-caption=" ">
+            <div class="thumbnail-testimonial">
+                <img src="testimonials/testimonial63.png" alt="Отзыв" loading="lazy">
+            </div>
+        </div>
+
+<div class="doc-card" data-full="testimonials/testimonial64.png" data-caption=" ">
+            <div class="thumbnail-testimonial">
+                <img src="testimonials/testimonial64.png" alt="Отзыв" loading="lazy">
+            </div>
+        </div>
+
+<div class="doc-card" data-full="testimonials/testimonial65.png" data-caption=" ">
+            <div class="thumbnail-testimonial">
+                <img src="testimonials/testimonial65.png" alt="Отзыв" loading="lazy">
             </div>
         </div>
     </div>
@@ -868,7 +1212,7 @@
 </script>
 
 <!-- Contact Section -->
-<section class="w-full bg-gray-100 py-20 px-12" id="contacts">
+<section class="w-full bg-white py-20 px-12" id="contacts">
   <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
 
     <!-- Contact Info -->
@@ -879,9 +1223,9 @@
       </p>
 
       <ul class="space-y-4 text-gray-700">
-        <li><strong>Телефон:</strong> +1 (234) 567-8901</li>
+        <!--<li><strong>Телефон:</strong> +1 (234) 567-8901</li>
         <li><strong>Почта:</strong> contact@drjohndoeclinic.com</li>
-        <li><strong>Адрес:</strong> 123 Health St, Wellness City, USA</li>
+        <li><strong>Адрес:</strong> 123 Health St, Wellness City, USA</li> -->
 		<li><strong>Страница на сайте клиники: </strong><a href="https://plastic-surgery.ru/about/specialists/dermsurgery/aleksandrov-maksim-albertovich/" style="">plastic-surgery.ru</a></li>
         <li><strong>Страница на ПроДокторов: </strong><a href="https://prodoctorov.ru/ekaterinburg/vrach/233321-aleksandrov/">prodoctorov.ru</a></li>
 	  </ul>

@@ -35,7 +35,7 @@
         /* Сетка галереи */
         .docs-gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
             gap: 24px;
             margin-bottom: 32px;
         }
@@ -59,7 +59,7 @@
 
         /* Обертка для миниатюры */
         .thumbnail {
-            aspect-ratio: 3 / 4;
+            aspect-ratio: 16 / 9;
             background: #eef2f6;
             display: flex;
             align-items: center;
@@ -69,7 +69,7 @@
         }
 		
 		.thumbnail-testimonial {
-            aspect-ratio: 3 / 4;
+            aspect-ratio: 16 / 9;
             background: #eef2f6;
             display: flex;
 			height: 100%;
